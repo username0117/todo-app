@@ -13,9 +13,6 @@ RUN npm install
 # 소스 코드 복사
 COPY . .
 
-# styles 폴더 존재 확인
-RUN ls -la src/styles
-
 # 환경변수 설정 (예시)
 ENV VITE_API_URL=http://api:5000
 
