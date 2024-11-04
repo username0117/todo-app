@@ -21,9 +21,9 @@ jobs:
     
     - name: Build and deploy
       env:
-        MONGO_ROOT_USERNAME: ${{ secrets.MONGO_ROOT_USERNAME }}
-        MONGO_ROOT_PASSWORD: ${{ secrets.MONGO_ROOT_PASSWORD }}
-        JWT_SECRET: ${{ secrets.JWT_SECRET }}
+        MONGO_ROOT_USERNAME: dw
+        MONGO_ROOT_PASSWORD: dw123
+        JWT_SECRET: b16d7c3b1fcc55170a7445f35686a2d0c1d9a0715e979b98d93f6ac2cddbb23ff34d82d2b68670848764b974d7216e782c1ab248ed7e1b5d4b8c37de3ab206f6
       run: |
         docker-compose build
         docker-compose up -d
