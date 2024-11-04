@@ -1,0 +1,152 @@
+/* 모달 오버레이
+ * - 전체 화면을 덮는 반투명 배경
+ * - 모달 창을 화면 중앙에 배치
+ */
+ .todo-form-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+/* 모달 폼 스타일
+ * - 흰색 배경의 모달 창
+ * - 스크롤 가능한 최대 높이 설정
+ */
+.todo-form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* 폼 그룹 스타일
+ * - 입력 필드와 라벨을 포함하는 컨테이너
+ */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+/* 요일 선택 버튼 그리드
+ * - 7일의 요일 버튼을 균등하게 배치
+ */
+.weekdays-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* 요일 버튼 스타일 */
+.weekday-button {
+  padding: 0.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.weekday-button.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.weekday-button:hover:not(.active) {
+  background-color: #f8fafc;
+}
+
+/* 체크리스트 입력 영역 */
+.checklist-input {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.checklist-input .input {
+  flex: 1;
+}
+
+/* 체크리스트 스타일 */
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.checklist-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background-color: #f8fafc;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.checklist-item span {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+/* 폼 하단 버튼 영역 */
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+/* 스크롤바 커스텀 스타일 */
+.todo-form::-webkit-scrollbar {
+  width: 8px;
+}
+
+.todo-form::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.todo-form::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.todo-form::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+  .weekdays-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .checklist-input {
+    flex-direction: column;
+  }
+
+  .checklist-input .btn {
+    width: 100%;
+  }
+}

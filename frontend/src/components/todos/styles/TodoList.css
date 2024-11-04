@@ -1,0 +1,35 @@
+/* 할일 목록 컨테이너
+ * - 전체 할일 목록을 감싸는 최상위 컨테이너
+ */
+ .todo-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+/* 할일 목록 헤더
+ * - 제목과 추가 버튼을 포함하는 상단 영역
+ */
+.todo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+/* 할일 목록 레이아웃
+ * - 세로 방향 정렬
+ * - 아이템 간 간격 설정
+ */
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* 빈 목록 메시지 스타일 */
+.empty-message {
+  text-align: center;
+  color: var(--secondary-color);
+  padding: 2rem;
+}

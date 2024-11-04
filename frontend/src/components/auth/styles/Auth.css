@@ -1,0 +1,48 @@
+/* 인증 폼 컨테이너
+ * - 로그인/회원가입 폼을 감싸는 카드 스타일 컨테이너
+ */
+ .auth-container {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+}
+
+/* 인증 폼 제목 */
+.auth-container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+}
+
+/* 인증 폼 레이아웃 */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* 폼 라벨 스타일 */
+.auth-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+/* 하단 링크 컨테이너 */
+.auth-link {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* 회원가입/로그인 전환 링크 */
+.auth-link a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.auth-link a:hover {
+  text-decoration: underline;
+}

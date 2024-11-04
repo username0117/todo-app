@@ -1,0 +1,83 @@
+/* 공통 버튼 스타일
+ * - 애플리케이션 전반에서 사용되는 버튼 스타일 정의
+ * - 상호작용 효과(호버 등) 포함
+ */
+ .btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;  /* 부드러운 호버 효과 */
+}
+
+/* 주요 액션을 위한 기본 버튼 */
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+/* 보조 액션을 위한 버튼 */
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #4B5563;
+}
+
+/* 삭제 등 위험 액션을 위한 버튼 */
+.btn-danger {
+  background-color: var(--error-color);
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #B91C1C;
+}
+
+/* 텍스트 형태의 링크 버튼 */
+.btn-link {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  padding: 0;
+  font-size: 0.875rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.btn-link:hover {
+  color: var(--primary-dark);
+}
+
+/* 폼 요소 공통 스타일 */
+.form-control {
+  margin-bottom: 1rem;
+}
+
+/* 입력 필드 공통 스타일 */
+.input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--primary-color);  /* 포커스 시 강조 효과 */
+}
+
+/* 텍스트 영역 특수 스타일 */
+.textarea {
+  resize: vertical;     /* 수직 리사이즈만 허용 */
+  min-height: 100px;    /* 최소 높이 설정 */
+}

@@ -1,0 +1,517 @@
+/* CSS 변수 정의: 
+ * - 재사용되는 값들을 한 곳에서 관리하여 일관성 유지
+ * - 테마 변경이나 스타일 수정이 필요할 때 이 곳에서만 수정하면 됨
+ */
+:root {
+  --primary-color: #3B82F6;
+  --primary-dark: #2563EB;
+  --secondary-color: #6B7280;
+  --background-color: #F9FAFB;
+  --text-color: #111827;
+  --error-color: #DC2626;
+  --success-color: #059669;
+}
+
+/* CSS 리셋:
+ * - 브라우저 기본 스타일을 초기화하여 일관된 스타일링을 가능하게 함
+ * - box-sizing: border-box로 설정하여 패딩이 요소의 전체 크기에 포함되도록 함
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 기본 body 스타일:
+ * - 시스템 기본 폰트를 사용하여 최적의 가독성 제공
+ * - CSS 변수를 활용하여 테마 색상 적용
+ */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+/* 반응형 컨테이너:
+ * - 최대 너비를 1200px로 제한하여 큰 화면에서도 읽기 좋은 레이아웃 유지
+ * - 자동 마진으로 중앙 정렬
+ * - 패딩으로 컨텐츠가 화면 가장자리에 붙지 않도록 함
+ */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* 버튼 기본 스타일:
+ * - 재사용 가능한 버튼 스타일 정의
+ * - transition으로 부드러운 호버 효과 구현
+ */
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+/* 버튼 변형 스타일:
+ * - 용도에 따른 다양한 버튼 스타일 정의
+ * - 호버 효과 포함
+ */
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #4B5563;
+}
+
+.btn-danger {
+  background-color: var(--error-color);
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #B91C1C;
+}
+
+/* 폼 요소 스타일:
+ * - 일관된 입력 필드 스타일 정의
+ * - focus 상태에서 강조색으로 테두리 변경하여 사용자 피드백 제공
+ */
+.form-control {
+  margin-bottom: 1rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+/* 인증 관련 컴포넌트 스타일:
+ * - 로그인/회원가입 폼을 위한 스타일
+ * - 중앙 정렬 및 그림자 효과로 시각적 계층 표현
+ */
+.auth-container {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.auth-container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auth-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.auth-link {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.auth-link a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.auth-link a:hover {
+  text-decoration: underline;
+}
+
+/* Todo 컴포넌트 스타일:
+ * - Todo 목록과 아이템을 위한 스타일
+ * - 그리드 레이아웃과 카드 스타일 디자인
+ */
+.todo-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.todo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.todo-item:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.todo-item.completed .todo-title {
+  text-decoration: line-through;
+  color: var(--secondary-color);
+}
+
+.todo-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  flex: 1;
+}
+
+.todo-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.todo-details {
+  flex: 1;
+}
+
+.todo-title {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+.todo-description {
+  margin: 0.5rem 0;
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+}
+
+.todo-due-date {
+  font-size: 0.8rem;
+  color: var(--secondary-color);
+  margin-top: 0.5rem;
+}
+
+/* TodoForm 모달 스타일:
+ * - 새로운 Todo 추가를 위한 모달 폼
+ * - 반투명 오버레이와 중앙 정렬된 모달 창
+ */
+.todo-form-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.todo-form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* 요일 선택 버튼 스타일:
+ * - 주간 반복 설정을 위한 요일 선택 버튼
+ * - 그리드 레이아웃으로 균일한 배치
+ */
+.weekdays-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.weekday-button {
+  padding: 0.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.weekday-button.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.weekday-button:hover:not(.active) {
+  background-color: #f8fafc;
+}
+
+/* 체크리스트 스타일:
+ * - Todo 항목의 하위 체크리스트
+ * - 추가/삭제 기능을 위한 레이아웃
+ */
+.checklist-input {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.checklist-input .input {
+  flex: 1;
+}
+
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.checklist-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background-color: #f8fafc;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.checklist-item span {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+/* 폼 액션 버튼 스타일:
+ * - 제출/취소 버튼을 위한 컨테이너
+ */
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+/* 네비게이션 바 스타일:
+ * - 상단 고정 네비게이션 바
+ * - 로고와 사용자 메뉴 배치
+ */
+.navbar {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-left .nav-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-name {
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.btn-logout {
+  background-color: transparent;
+  color: var(--error-color);
+  border: 1px solid var(--error-color);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-logout:hover {
+  background-color: var(--error-color);
+  color: white;
+}
+
+/* 스크롤바 커스텀 스타일:
+ * - WebKit 기반 브라우저를 위한 스크롤바 스타일링
+ */
+.todo-form::-webkit-scrollbar {
+  width: 8px;
+}
+
+.todo-form::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.todo-form::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.todo-form::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* 반응형 스타일:
+ * - 모바일 환경을 위한 미디어 쿼리
+ * - 레이아웃과 컴포넌트 크기 조정
+ */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 0.5rem;
+  }
+
+  .weekdays-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .checklist-input {
+    flex-direction: column;
+  }
+
+  .checklist-input .btn {
+    width: 100%;
+  }
+}
+
+/* TodoItem 확장 스타일 */
+.todo-expanded {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.todo-checklist {
+  margin: 1rem 0;
+}
+
+.todo-checklist h4 {
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.todo-footer {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--secondary-color);
+}
+
+.todo-repeat {
+  color: var(--primary-color);
+}
+
+.reference-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.reference-link:hover {
+  text-decoration: underline;
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  padding: 0;
+  font-size: 0.875rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.btn-link:hover {
+  color: var(--primary-dark);
+}
+
+.todo-item.overdue {
+  border: 2px solid #ff4444;
+  background-color: #fff5f5;
+  /* 선택적: 배경색 살짝 변경 */
+}
+
+/* 선택적: 마감일 텍스트 색상 변경 */
+.todo-item.overdue .todo-due-date {
+  color: #ff4444;
+  font-weight: bold;
+}

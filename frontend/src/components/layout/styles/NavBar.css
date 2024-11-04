@@ -1,0 +1,62 @@
+/* 네비게이션 바 컨테이너
+ * - 최상단에 고정된 네비게이션 바
+ * - 그림자 효과로 시각적 계층감 표현
+ */
+ .navbar {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+}
+
+/* 네비게이션 바 내부 컨텐츠 정렬
+ * - 좌우 양끝 정렬을 위한 flex 설정
+ */
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 로고/브랜드 영역 스타일 */
+.navbar-left .nav-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* 사용자 메뉴 영역 */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* 사용자 이름 표시 스타일 */
+.user-name {
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+/* 로그아웃 버튼 스타일
+ * - 테두리만 있는 버튼 디자인
+ * - 호버 시 배경색 변경 효과
+ */
+.btn-logout {
+  background-color: transparent;
+  color: var(--error-color);
+  border: 1px solid var(--error-color);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-logout:hover {
+  background-color: var(--error-color);
+  color: white;
+}
