@@ -9,9 +9,10 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src')
     }
   },
-  build: {
-    outDir: 'dist',
-    assetsDir: 'assets',
-    sourcemap: true
+  css: {
+    // CSS 모듈 설정 추가
+    modules: {
+      localsConvention: 'camelCase'
+    }
   }
 })
