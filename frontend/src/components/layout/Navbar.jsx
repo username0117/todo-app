@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
 
-import './styles/Navbar.css';
+import './styles/NavBar.css'
 
 /* Navbar 컴포넌트:
  * - 인증된 사용자에게만 표시
