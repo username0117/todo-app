@@ -12,9 +12,10 @@ import Register from './components/auth/Register';
 import TodoList from './components/todos/TodoList';
 
 // 기본 스타일 import
-import './styles/variables.css'
-import './styles/reset.css';
-import './styles/common.css';
+// src 폴더를 기준으로 한 절대 경로 사용
+import '@/styles/variables.css'
+import '@/styles/reset.css';
+import '@/styles/common.css';
 
 /* QueryClient 인스턴스 생성:
  * - React Query를 사용하여 서버 상태 관리

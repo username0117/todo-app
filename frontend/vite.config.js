@@ -6,15 +6,12 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src')
-    }
-  },
-  css: {
-    modules: {
-      localsConvention: 'camelCase'
+      '@': path.resolve(__dirname, 'src')
     }
   },
   build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
     sourcemap: true
   }
 })
