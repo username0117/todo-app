@@ -5,7 +5,7 @@ import axios from 'axios';
  * - 환경변수에서 API URL 가져옴
  */
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
+  baseURL: 'http://100.89.136.112:5000/api',
   headers: {
     'Content-Type': 'application/json'
   }

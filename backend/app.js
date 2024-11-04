@@ -8,7 +8,7 @@ const app = express();
 
 // CORS 설정 - 프론트엔드와의 통신을 위해 가장 먼저 설정
 app.use(cors({
-  origin: 'http://localhost:5173', // Vite 개발 서버 주소
+  origin: 'http://100.89.136.112:3000', // Vite 개발 서버 주소
   credentials: true, // 인증 관련 헤더 허용
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']

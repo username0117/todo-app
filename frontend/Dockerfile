@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # 환경변수 설정 (예시)
-ENV VITE_API_URL=http://api:5000
+ENV VITE_API_URL=http://100.89.136.112:5000/api
 
 # 빌드
 RUN npm run build

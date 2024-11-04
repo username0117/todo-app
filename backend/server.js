@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 5000;
 
 // CORS 설정 추가
 app.use(cors({
-  origin: 'http://localhost:5173', // Vite 개발 서버 주소
+  origin: 'http://100.89.136.112:3000', // Vite 개발 서버 주소
   credentials: true, // 인증 관련 헤더 허용
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'], // 허용할 HTTP 메서드
   allowedHeaders: ['Content-Type', 'Authorization'] // 허용할 헤더
